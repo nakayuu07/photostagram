@@ -1,0 +1,6 @@
+<h1>写真一覧</h1>
+
+<% @pictures.each do |picture| %>
+ <p>タイトル:<%= picture.title %></p>
+ <p>本文:<%= picture.content %></p>
+<% end %>
