@@ -8,6 +8,7 @@
 
      <% @pictures.each do |picture| %>
      <div class="row">
+      <p><strong><%= picture.user.name %></strong></p>
       <p>タイトル:<%= picture.title %></p>
       <p>本文:<%= picture.content %></p>
      <%= link_to "写真を編集する", edit_picture_path(picture.id), class: 'btn btn-default btn-sm btn-success'  %>
