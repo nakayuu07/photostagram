@@ -17,6 +17,9 @@
   <%= f.label :本文 %>
   <%= f.text_field :content,class: 'form-control' %>
   <br>
+  <%= f.file_field :avatar %>
+  <%= f.hidden_field :avatar_cache %>
+  <br>
   <%= f.submit'投稿', class:'btn btn-info btn-block'%>
 <% end %>
 
