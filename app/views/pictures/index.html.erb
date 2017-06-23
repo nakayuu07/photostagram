@@ -8,6 +8,7 @@
 
      <% @pictures.each do |picture| %>
      <div class="row">
+       <p class = one><%= profile_img(picture.user)%></p>
       <p><strong><%= picture.user.name %></strong></p>
       <p>タイトル:<%= picture.title %></p>
       <p>本文:<%= picture.content %></p>
