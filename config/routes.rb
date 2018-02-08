@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
-  resources :pictures, only: [:index,:new,:create,:edit,:update,:destroy]
+  resources :pictures
+
+  resources :favorites
 
   root 'top#index'
 

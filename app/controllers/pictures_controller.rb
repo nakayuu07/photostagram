@@ -1,7 +1,7 @@
 class PicturesController < ApplicationController
   before_action :authenticate_user!
 
-  before_action :set_pictures, only:[:edit,:update,:destroy]
+  before_action :set_pictures, only:[:edit,:update,:destroy ,:show]
 
   def index
     @pictures = Picture.all
@@ -36,6 +36,10 @@ class PicturesController < ApplicationController
   def destroy
     @picture.destroy
     redirect_to pictures_path,notice:"写真を削除しました"
+  end
+
+  def show
+    @favorite = current_user.favorites.find_by(picture_id: @picture.id)
   end
 
   private
