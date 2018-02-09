@@ -1,17 +1,15 @@
-<div id = "favorite-area">
-  <% if user_signed_in? && picture.favorite_user(current_user) %>
-     <%= button_to favorite_path(picture_id: picture.id), method: :delete, id: "favorite_button",remote: true do %>
-       <span>
-         ★お気に入りを取り消す
-         <%= picture.favorites_count %>
-       </span>
-     <% end %>
-   <% else %>
-     <%= button_to favorites_path(picture_id: picture.id), method: :post, id: "favorite_button",remote: true do %>
-       <span>
-         ★お気に入りをする
-         <%= picture.favorites_count %>
-       </span>
-     <% end %>
+<% if user_signed_in? && picture.favorite_user(current_user) %>
+   <%= button_to favorite_path(picture_id: picture.id), method: :delete, id: "favorite_button",remote: true do %>
+     <span>
+       ★お気に入りを取り消す
+       <%= picture.favorites_count %>
+     </span>
    <% end %>
-</div>
+ <% else %>
+   <%= button_to favorites_path(picture_id: picture.id), method: :post, id: "favorite_button",remote: true do %>
+     <span>
+       ★お気に入りをする
+       <%= picture.favorites_count %>
+     </span>
+   <% end %>
+ <% end %>
