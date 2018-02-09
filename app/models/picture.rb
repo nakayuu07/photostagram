@@ -6,4 +6,8 @@ class Picture < ActiveRecord::Base
   has_many :favorite_users, through: :favorites, source: :user
 
   mount_uploader :avatar, AvatarUploader
+
+  def favorite_user(user_id)
+   favorites.find_by(user_id: user_id)
+  end
 end
