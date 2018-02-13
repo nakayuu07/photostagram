@@ -3,8 +3,8 @@
     <div class = "col-md-12">
       <p class = "center"><%= profile_img(@picture.user)%></p>
       <p><strong><%= @picture.user.name %></strong></p>
-      <p>タイトル:<%= @picture.title %></p>
-      <p>本文:<%= @picture.content %></p>
+      <p >タイトル:<%= @picture.title %></p>
+         <p class = "photo center">photo:<%= image_tag(@picture.avatar) %></p>
       <% if current_user != @picture.user %>
         <%= render partial: 'favorites/favorite', locals: { picture: @picture} %>
       <% end %>

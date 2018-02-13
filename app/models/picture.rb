@@ -8,6 +8,6 @@ class Picture < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
   def favorite_user(user_id)
-   favorites.find_by(user_id: user_id)
+    favorites.find_by(user_id: user_id)
   end
 end
